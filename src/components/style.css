@@ -1,0 +1,83 @@
+.light-mode {
+  --background-color: #f5f5f5;
+  --text-color: #000;
+}
+
+.dark-mode {
+  --background-color: #000000;
+  --text-color: #ffffff;
+}
+
+/* PC端样式 */
+.header {
+  width: 60vw;
+}
+
+.content {
+  width: 45vw;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.footer {
+  width: 60vw;
+}
+
+.code {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/* 手机端样式 */
+@media (max-aspect-ratio: 1/1) {
+  .header {
+    width: 100vw;
+  }
+  .content {
+    width: 90vw;
+  }
+  .title {
+    font-size: 1rem;
+    text-align: center; /* 文字居中 */
+  }
+  .footer {
+    width: 100vw;
+  }
+}
+
+.login-form {
+  margin: 0 auto;
+  margin-top: 25%;
+}
+
+.centered-input {
+  text-align: center;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.dashboard-logo-vertical {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.dashboard-logo-vertical-small {
+  font-size: 0.8rem; /* 或者你想要的任何小字体大小 */
+  width: 90%;
+}
+
+.dashboard-header {
+  text-align: left;
+  line-height: 30px;
+  margin-left: 6.3%;
+}
+

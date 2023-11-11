@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link id="favicon" rel="icon" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link id="apple-icon" rel="apple-touch-icon" href="" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      var backend_url = "http://localhost:8000";
+      // 自定义后端地址
+      document.getElementById('favicon').href = backend_url + "/static/icon/favicon.ico";
+      document.getElementById('apple-icon').href = backend_url + "/static/icon/logo192.png";
+    </script>
+  </body>
+</html>
