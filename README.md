@@ -38,4 +38,5 @@ Callback URL 为前端地址 + `/github-oauth-redirect`， 如`http://localhost:
 在**docker-compose.yml**所在目录下，使用命令 `docker-compose up` 运行
 ## 其他
 如果部署到服务器，您可能还要进行Nginx反向代理等操作.
+默认用户名为 admin，初始密码为 password.
 
