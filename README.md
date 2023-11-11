@@ -2,7 +2,7 @@
  博客系统 White Dove 的前端，后端在 [white-dove-backend](https://github.com/barkure/white-dove-backend)
 # White-Dove 部署方法
 ## docker-compose.yml 配置
- 新建一个`docker-compose.yml`文件，内容如下：
+ 新建一个**docker-compose.yml**文件，内容如下：
  ```
 version: '3'
 services:
@@ -30,9 +30,11 @@ services:
       - ACCESS_TOKEN_EXPIRE_MINUTES=1440
       # 密钥有效期，此处是1440分钟，即一天
 ```
-`GITHUB_CLIENT_ID`和`GITHUB_CLIENT_SECRET`需自己申请，指路 `GitHUb主页`--->`Settings`--->`Developer Settings`--->`GitHub Apps`--->`New GitHub App`，其他配置项可按需更改.
+
+**GITHUB_CLIENT_ID**和**GITHUB_CLIENT_SECRET**需自己申请，指路如下：
+`GitHUb主页`--->`Settings`--->`Developer Settings`--->`GitHub Apps`--->`New GitHub App`，其他配置项可按需更改.
 ## 运行
-在`docker-compose.yml`所在目录下，使用命令 ·docker-compose up·运行
+在**docker-compose.yml**所在目录下，使用命令 `docker-compose up` 运行
 ## 其他
 如果部署到服务器，您可能还要进行Nginx反向代理等操作.
 
