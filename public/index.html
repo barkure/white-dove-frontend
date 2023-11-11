@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
   <head>
     <meta charset="utf-8" />
     <link id="favicon" rel="icon" href="" />
@@ -17,10 +17,11 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script>
-      var backend_url = "http://localhost:8000";
-      // 自定义后端地址
-      document.getElementById('favicon').href = backend_url + "/static/icon/favicon.ico";
-      document.getElementById('apple-icon').href = backend_url + "/static/icon/logo192.png";
+      (function() {
+        var backend_url = process.env.REACT_APP_BACKEND_BASE_URL || "http://localhost:8000";
+        document.getElementById('favicon').href = backend_url + "/static/icon/favicon.ico";
+        document.getElementById('apple-icon').href = backend_url + "/static/icon/logo192.png";
+      })();
     </script>
   </body>
 </html>
