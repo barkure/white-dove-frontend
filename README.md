@@ -31,7 +31,9 @@ services:
       # 密钥有效期，此处是1440分钟，即一天
 ```
 
-**GITHUB_CLIENT_ID**和**GITHUB_CLIENT_SECRET**需自己申请，指路如下： `GitHUb主页`--->`Settings`--->`Developer Settings`--->`GitHub Apps`--->`New GitHub App`，Callback URL 为前端地址 + `/github-oauth-redirect`， 如`http://localhost:3000/github-oauth-redirect`， 其他配置项可按需更改.
+**GITHUB_CLIENT_ID**和**GITHUB_CLIENT_SECRET**需自己申请，指路如下： `GitHUb主页`--->`Settings`--->`Developer Settings`--->`GitHub Apps`--->`New GitHub App`.
+
+Callback URL 为前端地址 + `/github-oauth-redirect`， 如`http://localhost:3000/github-oauth-redirect`， 其他配置项可按需更改.
 ## 运行
 在**docker-compose.yml**所在目录下，使用命令 `docker-compose up` 运行
 ## 其他
