@@ -7,7 +7,7 @@
 version: '3'
 services:
   white-dove-front:
-    image: barkure/white-dove-frontend:latest
+    image: barkure/white-dove-frontend:0.2.0
     ports:
       - "8080:3000"
     environment:
@@ -15,7 +15,7 @@ services:
       # 后端基本URL
 
   white-dove-backend:
-    image: barkure/white-dove-backend:latest
+    image: barkure/white-dove-backend:0.1.0
     ports:
       - "1234:8000"
     environment:
