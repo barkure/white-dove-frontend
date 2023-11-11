@@ -3,7 +3,7 @@
 # White-Dove 部署方法
 ## docker-compose.yml 配置
  新建一个**docker-compose.yml**文件，内容如下：
- ```
+ ```yml
 version: '3'
 services:
   white-dove-front:
