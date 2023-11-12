@@ -18,9 +18,8 @@
     <div id="root"></div>
     <script>
       (function() {
-        var backend_url = process.env.REACT_APP_BACKEND_BASE_URL;
-        // 如果要自己自己部署前后端，则应注释掉上面一行，然后取消下面一行的注释，并按需修改
-        // var backend_url = "http://localhost:8000";
+        var backend_url = "https://api.blog.barku.re";
+        //修改为你的后端地址
         document.getElementById('favicon').href = backend_url + "/static/icon/favicon.ico";
         document.getElementById('apple-icon').href = backend_url + "/static/icon/logo192.png";
       })();
