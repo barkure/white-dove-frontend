@@ -1,42 +1,42 @@
 # white-dove-frontend
- 博客系统 White Dove 的前端，后端在 [white-dove-backend](https://github.com/barkure/white-dove-backend)
-# White-Dove 部署方法
-## docker-compose.yml 配置
- 新建一个**docker-compose.yml**文件，内容如下：
- ```yml
-version: '3'
-services:
-  white-dove-front:
-    image: barkure/white-dove-frontend:0.2.0
-    ports:
-      - "8080:3000"
-    environment:
-      - REACT_APP_BACKEND_BASE_URL=http://localhost:1234
-      # 后端基本URL
+ 博客系统 White Dove 的前端，后端在 [white-dove-backend](https://github.com/barkure/white-dove-backend).
+# 前端部署方法
+## 修改前端配置
+首先，你需要从GitHub上拉取这个仓库。你可以使用以下命令（亦或是下载本仓库）：
 
-  white-dove-backend:
-    image: barkure/white-dove-backend:0.1.0
-    ports:
-      - "1234:8000"
-    environment:
-      - GITHUB_CLIENT_ID=xxxxxxxxxxxxxxxxx
-      # 将 GitHub 申请到的 GITHUB_CLIENT_ID 粘贴到这里
-      - GITHUB_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxx
-      # 将 GitHub 申请到的 GITHUB_CLIENT_SECRET 粘贴到这里
-      - FRONTEND_URL=http://localhost:8080
-      # 前端基本URL
-      - SECRET_KEY=xdweji
-      # 用来生成鉴权的令牌，可以键入随机字符串
-      - ACCESS_TOKEN_EXPIRE_MINUTES=1440
-      # 密钥有效期，此处是1440分钟，即一天
+```bash
+git clone https://github.com/barkure/white-dove-frontend.git
+```
+然后打开项目，修改相关的配置：
+1. 打开 `src\components\config.js`，将第 5 行的`Backend_baseURL`修改为自己的后端地址，示例如下：
+```javascript
+const config = {
+  Backend_baseURL: "https://api.blog.barku.re",
+  // 修改为你的后端地址
+};
+```
+2. 打开`public\index.html`，将第 21 行的`backend_url`修改为自己的后端地址，示例如下：
+```javascript
+var backend_url = "https://api.blog.barku.re";
 ```
 
-**GITHUB_CLIENT_ID**和**GITHUB_CLIENT_SECRET**需自己申请，指路如下： `GitHUb主页`--->`Settings`--->`Developer Settings`--->`GitHub Apps`--->`New GitHub App`.
+## 构建前端运行文件
+在项目的根目录，即`white-dove-frondend\`目录下，运行如下命令（分两次）：
+```bash
+npm install
+npm run build
+```
+运行结束后，根目录会出现一个`build\`文件夹.
+注意：此处假设你的电脑已经安装了 [**Node.js**](https://nodejs.org/).
 
-Callback URL 为前端地址 + `/github-oauth-redirect`， 如`http://localhost:3000/github-oauth-redirect`， 其他配置项可按需更改.
-## 运行
-在**docker-compose.yml**所在目录下，使用命令 `docker-compose up` 运行
-## 其他
-如果部署到服务器，您可能还要进行Nginx反向代理等操作.
-默认用户名为 admin，初始密码为 password.
+## 部署到服务器
+上传你之前生成的 `build`文件夹下的所有文件（及目录）到你的站点根目录，**然后在 Nginx 的配置文件中添加以下设置：**
+```nginx
+location / {
+    try_files $uri $uri/ /index.html;
+}
+```
+___
+SSL 配置等请自行完成，访问 “http(s)://前端地址/login” 可以正常看到登陆页面后，就说明前端部署完成.
 
+后端在 [white-dove-backend](https://github.com/barkure/white-dove-backend).
