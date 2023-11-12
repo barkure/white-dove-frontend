@@ -1,5 +1,6 @@
 # white-dove-frontend
- 博客系统 White Dove 的前端，后端在 [white-dove-backend](https://github.com/barkure/white-dove-backend). 采用 React.js 和 Ant.Design 编写.
+ 博客系统 White Dove 的前端，采用 React.js 和 Ant.Design 编写.
+ 后端在 [white-dove-backend](https://github.com/barkure/white-dove-backend).
 # 前端部署方法
 ## 修改前端配置
 首先，你需要从GitHub上拉取这个仓库。你可以使用以下命令（亦或是下载本仓库）：
