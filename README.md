@@ -21,7 +21,7 @@ var backend_url = "https://api.blog.barku.re";
 ```
 
 ## 构建前端运行文件
-在项目的根目录，即`white-dove-frondend\`目录下，运行如下命令（分两次）：
+在项目的根目录，即`white-dove-frontend\`目录下，运行如下命令（分两次）：
 ```bash
 npm install
 npm run build
