@@ -8,7 +8,7 @@ import config from '../config'; // 导入基础路径
 
 
 const { Dragger } = Upload;
-const { Header, Content } = Layout;
+const { Content } = Layout;
 const contentStyle = {
     margin: '0 auto',
     marginTop: '40px',

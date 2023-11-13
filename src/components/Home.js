@@ -120,7 +120,7 @@ const Home = () => {
                     &copy; {new Date().getFullYear()} <Link to="/">{blogName}</Link>.
                 </div>
                 <div className="right-footer">
-                    Powered by 白鸽
+                    Powered by <Link to='https://github.com/barkure/white-dove-frontend'>白鸽</Link>
                 </div>
             </Footer>
         </Layout>

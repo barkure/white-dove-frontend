@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react'; // 引入React核心库
 import { LogoutOutlined, FormOutlined, FileOutlined, PieChartOutlined, EditOutlined, UserOutlined } from '@ant-design/icons';
 // 引入antd图标
-import { Breadcrumb, Layout, Menu, theme, message } from 'antd'; // 引入antd组件
-import { useNavigate, Outlet, useLocation } from 'react-router-dom'; // 引入路由
+import { Layout, Menu, theme, message } from 'antd'; // 引入antd组件
+import { Link, useNavigate, Outlet, useLocation } from 'react-router-dom'; // 引入路由
 import './style.css'; // 引入样式文件
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -34,19 +34,19 @@ const Dashboard = () => {
 
   // 从 localStorage 中读取 blogName
 
-      // 当 localStorage 中的 blogName 更新时，更新 blogName 的状态
-      useEffect(() => {
-        const handleStorageChange = () => {
-            setBlogName(localStorage.getItem('blogName'));
-        };
+  // 当 localStorage 中的 blogName 更新时，更新 blogName 的状态
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setBlogName(localStorage.getItem('blogName'));
+    };
 
-        window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('storage', handleStorageChange);
 
-        // 在组件卸载时移除事件监听器
-        return () => {
-            window.removeEventListener('storage', handleStorageChange);
-        };
-    }, []);
+    // 在组件卸载时移除事件监听器
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
 
   const [collapsed, setCollapsed] = useState(false);
   const { token: { colorBgContainer } } = theme.useToken();
@@ -136,7 +136,9 @@ const Dashboard = () => {
           <Outlet />
         </Content>
         <Footer style={{ textAlign: 'center' }}>
-          Powered by 白鸽
+          <div className="right-footer">
+            Powered by <Link to='https://github.com/barkure/white-dove-frontend'>白鸽</Link>
+          </div>
         </Footer>
       </Layout>
     </Layout>

@@ -34,20 +34,20 @@ const Login = () => {
     const [blogName, setBlogName] = useState(localStorage.getItem('blogName') || 'Default Blog Name');
 
     // 从 localStorage 中读取 blogName
-  
-        // 当 localStorage 中的 blogName 更新时，更新 blogName 的状态
-        useEffect(() => {
-          const handleStorageChange = () => {
-              setBlogName(localStorage.getItem('blogName'));
-          };
-  
-          window.addEventListener('storage', handleStorageChange);
-  
-          // 在组件卸载时移除事件监听器
-          return () => {
-              window.removeEventListener('storage', handleStorageChange);
-          };
-      }, []);
+
+    // 当 localStorage 中的 blogName 更新时，更新 blogName 的状态
+    useEffect(() => {
+        const handleStorageChange = () => {
+            setBlogName(localStorage.getItem('blogName'));
+        };
+
+        window.addEventListener('storage', handleStorageChange);
+
+        // 在组件卸载时移除事件监听器
+        return () => {
+            window.removeEventListener('storage', handleStorageChange);
+        };
+    }, []);
 
     useEffect(() => {
         document.title = `${blogName} - 登录`;
@@ -151,7 +151,7 @@ const Login = () => {
                     &copy; {new Date().getFullYear()} <Link to="/">{blogName}</Link>.
                 </div>
                 <div className="right-footer">
-                    Powered by 白鸽
+                    Powered by <Link to='https://github.com/barkure/white-dove-frontend'>白鸽</Link>
                 </div>
             </Footer>
         </Layout>

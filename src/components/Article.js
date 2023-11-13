@@ -62,19 +62,19 @@ const Article = () => {
 
   // 从 localStorage 中读取 blogName
 
-      // 当 localStorage 中的 blogName 更新时，更新 blogName 的状态
-      useEffect(() => {
-        const handleStorageChange = () => {
-            setBlogName(localStorage.getItem('blogName'));
-        };
+  // 当 localStorage 中的 blogName 更新时，更新 blogName 的状态
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setBlogName(localStorage.getItem('blogName'));
+    };
 
-        window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('storage', handleStorageChange);
 
-        // 在组件卸载时移除事件监听器
-        return () => {
-            window.removeEventListener('storage', handleStorageChange);
-        };
-    }, []);
+    // 在组件卸载时移除事件监听器
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
 
   useEffect(() => { // 一个获取文章内容的钩子
     axiosInstance.get(`/articles/get_article/${article_id}`)
@@ -119,7 +119,7 @@ const Article = () => {
           &copy; {new Date().getFullYear()} <Link to="/">{blogName}</Link>.
         </div>
         <div className="right-footer">
-          Powered by 白鸽
+          Powered by <Link to='https://github.com/barkure/white-dove-frontend'>白鸽</Link>
         </div>
       </Footer>
     </Layout>

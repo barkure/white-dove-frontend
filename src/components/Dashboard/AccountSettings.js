@@ -5,12 +5,8 @@ import axiosInstance from '../axiosInstance'; // 导入配置好的axios实例
 import { Modal, Divider, Upload } from 'antd';
 import config from '../config'; // 导入基础路径
 import { PlusOutlined, GithubOutlined } from '@ant-design/icons';
+import { useNavigate } from "react-router-dom";
 
-
-
-
-const { Dragger } = Upload;
-const { Header, Content } = Layout;
 const contentStyle = {
   margin: '0 auto',
   marginTop: '20px',
@@ -32,11 +28,9 @@ const onFinishFailed = (errorInfo) => {
 };
 
 
-
 const AccountSettings = () => {
 
   const [blogName, setBlogName] = useState(localStorage.getItem('blogName') || 'Default Blog Name');
-
   // 从 localStorage 中读取 blogName
 
   // 当 localStorage 中的 blogName 更新时，更新 blogName 的状态
@@ -67,6 +61,7 @@ const AccountSettings = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [blogname, setBlogname] = useState('');
+  const navigate = useNavigate();
 
   const updateBlogname = () => {
     axiosInstance.post('/users/update_blogName', { blogName: blogname, user_id: localStorage.getItem('user_id') })
@@ -85,7 +80,17 @@ const AccountSettings = () => {
     axiosInstance.post('/users/update_user', { userName: username, user_id: localStorage.getItem('user_id') })
       .then(response => {
         // 处理响应
-        response.data.update_yes ? message.success('成功更改用户名') : message.error('更改用户名失败');
+        if (response.data.update_yes) {
+          message.success('成功更改用户名');
+          localStorage.removeItem('token'); // 删除 localStorage 中的 token
+          localStorage.removeItem('userName'); // 删除 localStorage 中的 userName
+          localStorage.removeItem('user_id'); // 删除 localStorage 中的 user_id
+          localStorage.removeItem('GitHub_id'); // 删除 localStorage 中的 GitHub_id
+          message.success('退出登录成功');
+          navigate('/login'); // 重定向至首页
+        } else {
+          message.error('更改用户名失败');
+        }
       })
       .catch(error => {
         // 处理错误
@@ -125,6 +130,7 @@ const AccountSettings = () => {
         // 处理错误
       });
   }, []);
+  
 
   //检测图片大小和类型
   const handleBeforeUpload = (file) => {
