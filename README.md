@@ -8,7 +8,7 @@
 1. Fork本仓库，在你Fork的仓库点击`Actions`---`I understand my workflows, go ahead and enable them`（绿色Button）.
 2. 点击仓库的 `Settings`---`secrets and variables`---`New repository`，在`Name*`填写`BACKEND`，在`Secret*`填写你的后端地址，比如：`https://api.blog.barku.re`.
 3. 任意做一点修改后提交，触发Actions. 建议如此操作：在`README.md`中键入回车或者空格，然后保存.
-4. 稍等两分钟，在`Release`中会有一个`release.zip`. 下载解压`release.zip`后即得到构建的`build`文件，然后照后文的**部署到服务器**操作.
+4. 稍等两分钟，在`Release`中会有一个`release.zip`. 下载解压后即得到构建的`build`文件，然后照后文的**部署到服务器**操作.
 5. （可选）如果你并不想让你的后端地址被他人知道，请及时删除`Realease`.
 
 ### 本地构建
