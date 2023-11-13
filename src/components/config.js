@@ -3,7 +3,7 @@
 // 设置后端API的基本URL
 const config = {
   Backend_baseURL: "https://api.blog.barku.re",
-  // 修改为你的后端地址
+  // 修改为你的后端地址123
 };
 
 export default config;
