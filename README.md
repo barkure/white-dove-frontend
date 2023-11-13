@@ -39,9 +39,12 @@ location / {
 }
 ```
 ___
-注：SSL 配置，域名绑定等请自行完成.
+## 注意事项
+默认账户：`admin` ，默认密码：`password`.
+
+
+SSL 配置，域名绑定等请自行完成.
 
 访问 “http(s)://前端地址/login” 可以正常看到登陆页面后，就说明前端部署完成.可以进行后端部署了.
 
 **后端在 [white-dove-backend](https://github.com/barkure/white-dove-backend)**.
-默认账户：`admin` ，默认密码：`password`
