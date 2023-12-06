@@ -107,8 +107,10 @@ const Article = () => {
       <Content className="content" style={contentStyle}>
         <Title level={2} className="title" style={themeStyle}>{articleTitle}</Title>
         <ReactMarkdown
+          className="ReactMarkdown"
           children={articleContent} // 文章内容
-          rehypePlugins={ [rehypeHighlight, rehypeRaw, gfm ]} // 代码高亮
+          rehypePlugins={[rehypeHighlight, rehypeRaw]} // 代码高亮
+          remarkPlugins={[gfm]} // 使用remark-gfm
           components={{
             img(props) {
               return <img {...props} style={{ maxWidth: '100%' }} />; // 图片宽度自适应
