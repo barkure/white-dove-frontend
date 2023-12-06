@@ -12,6 +12,7 @@ import 'highlight.js/styles/github-dark-dimmed.css'; // 代码高亮样式
 //很奇怪的是，此处引用的高亮样式是 highlight.js 的，而我是用rehype-highlight插件实现代码高亮
 //不知道为什么要引入这个样式，但是不引入的话代码高亮就不生效
 import rehypeRaw from 'rehype-raw'; // 用于解析html标签
+import gfm from 'remark-gfm'; // 用于解析markdown中的表格
 
 const { Header, Footer, Content } = Layout;
 const { Title } = Typography;
@@ -107,7 +108,7 @@ const Article = () => {
         <Title level={2} className="title" style={themeStyle}>{articleTitle}</Title>
         <ReactMarkdown
           children={articleContent} // 文章内容
-          rehypePlugins={[rehypeHighlight, rehypeRaw]} // 代码高亮
+          rehypePlugins={ [rehypeHighlight, rehypeRaw, gfm ]} // 代码高亮
           components={{
             img(props) {
               return <img {...props} style={{ maxWidth: '100%' }} />; // 图片宽度自适应
