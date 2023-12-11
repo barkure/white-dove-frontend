@@ -113,6 +113,9 @@ const Article = () => {
           components={{
             img(props) {
               return <img {...props} style={{ maxWidth: '100%' }} />; // 图片宽度自适应
+            },
+            code({ node, inline, className, children, ...props }) {
+              return <code className={`code ${className}`} {...props}>{children}</code>
             }
           }}
         />
