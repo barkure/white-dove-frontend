@@ -114,8 +114,11 @@ const Article = () => {
             img(props) {
               return <img {...props} style={{ maxWidth: '100%' }} />; // 图片宽度自适应
             },
-            code({ node, inline, className, children, ...props }) {
-              return <code className={`code ${className}`} {...props}>{children}</code>
+            code({ node, inline, className, children, ...props }) { // 行内代码高亮
+              if (inline) { // 行内代码
+                return <code className={`code ${className}`} {...props}>{children}</code>;
+              }
+              return <code className={className} {...props}>{children}</code>;
             }
           }}
         />
