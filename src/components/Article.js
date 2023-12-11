@@ -114,17 +114,6 @@ const Article = () => {
             img(props) {
               return <img {...props} style={{ maxWidth: '100%' }} />; // 图片宽度自适应
             },
-            code({ node, inline, className, children, ...props }) { // 行内代码高亮
-              const style = {
-                backgroundColor: '#22272e',
-                color: '#adbac7',
-              };
-
-              if (inline) { // 行内代码
-                return <code className={`code ${className}`} style={style} {...props}>{children}</code>;
-              }
-              return <code className={className} {...props}>{children}</code>;
-            }
           }}
         />
       </Content>

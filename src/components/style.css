@@ -26,23 +26,22 @@
   width: 60vw;
 }
 
-.code {
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
 /* 手机端样式 */
 @media (max-aspect-ratio: 1/1) {
   .header {
     width: 100vw;
   }
+
   .content {
     width: 90vw;
   }
+
   .title {
     font-size: 1rem;
-    text-align: center; /* 文字居中 */
+    text-align: center;
+    /* 文字居中 */
   }
+
   .footer {
     width: 100vw;
   }
@@ -72,7 +71,8 @@
 }
 
 .dashboard-logo-vertical-small {
-  font-size: 0.8rem; /* 或者你想要的任何小字体大小 */
+  font-size: 0.8rem;
+  /* 或者你想要的任何小字体大小 */
   width: 90%;
 }
 
@@ -86,11 +86,21 @@
   border-collapse: collapse;
 }
 
-.ReactMarkdown th, .ReactMarkdown td {
+.ReactMarkdown th,
+.ReactMarkdown td {
   border: 1px solid black;
   padding: 10px;
 }
 
 .ReactMarkdown p {
-  line-height: 1.6; /* 设置行高 */
+  line-height: 1.6;
+  /* 设置行高 */
+}
+
+.ReactMarkdown code {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: #22272e;
+  color: #adbac7;
 }
