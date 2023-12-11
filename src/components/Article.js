@@ -61,7 +61,6 @@ const Article = () => {
   const [articleTitle, setArticleTitle] = useState(''); // 文章标题
   const { article_id } = useParams(); // 获取路由参数
   const [blogName, setBlogName] = useState(localStorage.getItem('blogName') || 'Default Blog Name');
-
   // 从 localStorage 中读取 blogName
 
   // 当 localStorage 中的 blogName 更新时，更新 blogName 的状态
@@ -77,6 +76,11 @@ const Article = () => {
       window.removeEventListener('storage', handleStorageChange);
     };
   }, []);
+
+  // 行内代码样式
+  const InlineCode = ({ node, inline, className, children, ...props }) => {
+    return <code className={className} {...props}>{children}</code>
+  }
 
   useEffect(() => { // 一个获取文章内容的钩子
     axiosInstance.get(`/articles/get_article/${article_id}`)
@@ -114,7 +118,8 @@ const Article = () => {
           components={{
             img(props) {
               return <img {...props} style={{ maxWidth: '100%' }} />; // 图片宽度自适应
-            }
+            },
+            inlineCode: InlineCode, // 行内代码样式
           }}
         />
       </Content>
