@@ -98,7 +98,6 @@
 }
 
 .ReactMarkdown code:not(pre > code) {
-  overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
   background-color: #22272e;
