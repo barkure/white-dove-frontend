@@ -77,11 +77,6 @@ const Article = () => {
     };
   }, []);
 
-  // 行内代码样式
-  const InlineCode = ({ node, inline, className, children, ...props }) => {
-    return <code className={className} {...props}>{children}</code>
-  }
-
   useEffect(() => { // 一个获取文章内容的钩子
     axiosInstance.get(`/articles/get_article/${article_id}`)
       .then((response) => {
@@ -118,8 +113,7 @@ const Article = () => {
           components={{
             img(props) {
               return <img {...props} style={{ maxWidth: '100%' }} />; // 图片宽度自适应
-            },
-            inlineCode: InlineCode, // 行内代码样式
+            }
           }}
         />
       </Content>

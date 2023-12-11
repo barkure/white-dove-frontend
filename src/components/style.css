@@ -30,6 +30,7 @@
   overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
+  background-color: #22272e;
 }
 /* 手机端样式 */
 @media (max-aspect-ratio: 1/1) {
