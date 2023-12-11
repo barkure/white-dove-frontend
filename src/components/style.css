@@ -97,7 +97,7 @@
   /* 设置行高 */
 }
 
-.ReactMarkdown code {
+.ReactMarkdown code:not(pre > code) {
   overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
