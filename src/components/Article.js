@@ -109,7 +109,7 @@ const Article = () => {
         <ReactMarkdown
           className="ReactMarkdown"
           children={articleContent} // 文章内容
-          rehypePlugins={[rehypeHighlight, rehypeRaw]} // 代码高亮
+          rehypePlugins={[rehypeHighlight, rehypeRaw]} // 代码高亮，解析html标签
           remarkPlugins={[gfm]} // 使用remark-gfm
           components={{
             img(props) {
