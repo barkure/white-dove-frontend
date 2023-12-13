@@ -31,7 +31,6 @@ const items = [
 
 const Dashboard = () => {
   const [blogName, setBlogName] = useState(localStorage.getItem('blogName') || 'Default Blog Name');
-
   // 从 localStorage 中读取 blogName
 
   // 当 localStorage 中的 blogName 更新时，更新 blogName 的状态
@@ -53,6 +52,14 @@ const Dashboard = () => {
   const [selectedItem, setSelectedItem] = useState(items[0]);
   const location = useLocation();
   const navigate = useNavigate();
+
+  // 检查localStorage中是否有token
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login'); // 如果没有token，重定向到登录页面
+    }
+  }, [navigate]);
 
   const handleMenuClick = e => {
     let clickedItem;
