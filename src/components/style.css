@@ -55,6 +55,11 @@
     width: 90vw;
   }
 
+  .title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
   .footer {
     width: 100vw;
   }
