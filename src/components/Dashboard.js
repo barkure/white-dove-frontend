@@ -57,6 +57,7 @@ const Dashboard = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
+      message.error('您还未登录！');
       navigate('/login'); // 如果没有token，重定向到登录页面
     }
   }, [navigate]);
