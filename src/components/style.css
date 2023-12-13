@@ -55,17 +55,6 @@
     width: 90vw;
   }
 
-  .title {
-    font-size: 1rem;
-    text-align: center;
-    /* 文字居中 */
-  }
-
-  .article-title {
-    font-size: 2rem;
-    text-align: center;
-  }
-
   .footer {
     width: 100vw;
   }
