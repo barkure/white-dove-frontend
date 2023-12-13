@@ -104,7 +104,7 @@ const Article = () => {
         />
       </Header>
       <Content className="content" style={contentStyle}>
-        <Title level={2} className="title" style={themeStyle}>{articleTitle}</Title>
+        <Title level={2} className="article-title" style={themeStyle}>{articleTitle}</Title>
         <ReactMarkdown
           className="ReactMarkdown"
           children={articleContent} // 文章内容

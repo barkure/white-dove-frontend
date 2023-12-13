@@ -3,8 +3,10 @@
   --text-color: #000;
 
   .ReactMarkdown code:not(pre > code) {
-    background-color: #cecece; /* 浅色背景 */
-    color: #000; /* 深色文本 */
+    background-color: #cecece;
+    /* 浅色背景 */
+    color: #000;
+    /* 深色文本 */
   }
 }
 
@@ -13,8 +15,10 @@
   --text-color: #ffffff;
 
   .ReactMarkdown code:not(pre > code) {
-    background-color: #22272e; /* 深色背景 */
-    color: #adbac7; /* 浅色文本 */
+    background-color: #22272e;
+    /* 深色背景 */
+    color: #adbac7;
+    /* 浅色文本 */
   }
 }
 
@@ -28,6 +32,11 @@
 }
 
 .title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.article-title {
   font-size: 2rem;
   text-align: center;
 }
@@ -50,6 +59,11 @@
     font-size: 1rem;
     text-align: center;
     /* 文字居中 */
+  }
+
+  .article-title {
+    font-size: 2rem;
+    text-align: center;
   }
 
   .footer {
